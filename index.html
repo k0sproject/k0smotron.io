@@ -16,7 +16,7 @@
 				<div class="col-12 header-col">
 					<div class="social-icons">
 						<a href="https://github.com/k0sproject/k0smotron" target="_blank"><i class="fab fa-github"></i></a>
-						<a href="https://forums.k8slens.dev/" target="_blank"><i class="fab fa-comments"></i></a> <!-- Dunno why fa-comments does not work, should be part of the standard FA -->
+						<a href="https://forums.k8slens.dev/" target="_blank"><i class="fas fa-comments"></i></a>
 						<a href="https://twitter.com/k0sproject" target="_blank"><i class="fab fa-twitter"></i></a>
 					</div>
 				</div>
@@ -29,14 +29,15 @@
 				<div class="image-col">
 					<img class="image-dashed rotating" src="images/dashed-ring@2x.png" alt="dashed-ring">
 					<img class="image-circle" src="images/wave-circle@2x.png" alt="wave-circle">
+					<div class="text" style="top:-25%"><p>Team Lens prodly presents</p></div>
 					<img class="image-logo" src="images/k0smotron-logo-inverted@2x.png" alt="k0smotron-logo-inverted">
 					<div class="text"><p>From pets to cattle: Streamline your Kubernetes control plane management with k0smotron</p></div>	
 				</div>
 			</div>
 			<div class="row hero-section-text-row">
 				<div class="col-8 center">
-					<p>As the controlplanes for clusters are pretty static, it means they are usually managed as "pets". Using an operator like k0smotron to manage k0s control planes within an existing Kubernetes cluster is a "cattle" approach that allows for a more scalable and flexible management of clusters. This approach makes it easier to maintain a consistent and homogeneous setup across all clusters, while also taking advantage of the high availability and auto-healing features of Kubernetes.</p>
-					<p>Experience unparalleled isolation, scalability, and resource efficiency for your Kubernetes control planes with k0smotron - the ultimate Kubernetes management solution. It’s designed for k0s.</p>
+					<p></p>
+					<p>Experience unparalleled isolation, scalability, and resource efficiency for your Kubernetes control planes with k0smotron - the ultimate Kubernetes management solution. It’s designed for <a href="https://k0sproject.io" target="_blank">k0s</a></p>
 				</div>
 			</div>
 		</div>
@@ -79,7 +80,7 @@
 					<p>k0smotron is an Kubernetes operator designed to manage the lifecycle of k0s control planes in a Kubernetes (any distro) cluster. By running the control plane on a k8s cluster we can enjoy and leverage the high availability and auto-healing functionalities of the underlying cluster, a.k.a Mothership.</p>
 				</div>
 				<div class="col-6">
-					<img src="images/how-does-it-work-diagram@2x.png" alt="how-does-it-work-diagram">
+					<img src="images/k0smotron.png" alt="how-does-it-work-diagram" />
 				</div>
 			</div>
 		</div>
@@ -112,6 +113,28 @@
 					</div>
 				</div>
 			</div>
+			<div class="row">
+				<div class="col-12 left">
+					<h2>Getting started</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12 left">
+					<p>Getting started with k0smotron is easy. Simply install the controller into existing cluster:</p>
+					<pre><code class="language-bash">kubectl apply -f https://raw.githubusercontent.com/k0sproject/k0smotron/main/install.yaml</code></pre>
+					<p>Then create a k0s control plane:</p>
+					<pre><code class="language-bash">
+kubectl apply -f - &lt;&lt;EOF
+apiVersion: k0smotron.io/v1beta1
+kind: K0smotronCluster
+metadata:
+name: my-k0smotron
+spec: null
+EOF
+					</code></pre>
+					<p>And that's it. You now have a k0s control plane running in your cluster. For further details how to work with the created cluster control plane check out the <a href="https://docs.k0smotron.io" target="_blank">documentation</a>.</p>
+				</div>
+			</div>
 			<div class="row faq-row">
 				<div class="col-12">
 					<h2>FAQ</h2>
@@ -122,7 +145,7 @@
 							What is the relation of k0smotron with <a href="https://cluster-api.sigs.k8s.io/" target="_blank">Cluster API</a>
 						</div>
 						<div class="faq-item-a">
-							While k0smotron currently is a "standalone" controller for k0s control planes we're looking to expand this as a full Cluster API provider. Or rather set pf providers as were looking to implement both ControlPlane and Bootstrap providers.
+							While k0smotron currently is a "standalone" controller for k0s control planes we're looking to expand this as a full Cluster API provider. Or rather set of providers as were looking to implement both ControlPlane and Bootstrap providers.
 						</div>
 					</div>
 					<div class="faq-item">
@@ -135,6 +158,14 @@
 					</div>
 				</div>
 				<div class="col-6">
+					<div class="faq-item">
+						<div class="faq-item-q">
+							What do we mean with pet vs. cattle?
+						</div>
+						<div class="faq-item-a">
+							As the controlplanes for clusters are pretty static, it means they are usually managed as "pets". Using an operator like k0smotron to manage k0s control planes within an existing Kubernetes cluster is a "cattle" approach that allows for a more scalable and flexible management of clusters. This approach makes it easier to maintain a consistent and homogeneous setup across all clusters, while also taking advantage of the high availability and auto-healing features of Kubernetes.
+						</div>
+					</div>
 					<div class="faq-item">
 						<div class="faq-item-q">
 							How is this different for managed Kubernetes providers?
@@ -157,7 +188,7 @@
 					<h2>Join the <br>k0smotron community</h2>
 					<div class="social-icons">
 						<a href="https://github.com/k0sproject/k0smotron" target="_blank"><i class="fab fa-github"></i></a>
-						<a href="https://forums.k8slens.dev/" target="_blank"><i class="fab fa-comments"></i></a> <!-- Dunno why fa-comments does not work, should be part of the standard FA -->
+						<a href="https://forums.k8slens.dev/" target="_blank"><i class="fas fa-comments"></i></a>
 						<a href="https://twitter.com/k0sproject" target="_blank"><i class="fab fa-twitter"></i></a>
 					</div>
 					<p>Copyright © 2023 Mirantis, Inc. - All rights reserved.</p>
