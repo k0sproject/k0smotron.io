@@ -524,9 +524,9 @@ footer .social-icons a i{
   }
 }
 .rotating {
-  -webkit-animation: rotating 40s linear infinite;
-  -moz-animation: rotating 40s linear infinite;
-  -ms-animation: rotating 40s linear infinite;
-  -o-animation: rotating 40s linear infinite;
-  animation: rotating 40s linear infinite;
+  -webkit-animation: rotating 140s linear infinite;
+  -moz-animation: rotating 140s linear infinite;
+  -ms-animation: rotating 140s linear infinite;
+  -o-animation: rotating 140s linear infinite;
+  animation: rotating 140s linear infinite;
 }
