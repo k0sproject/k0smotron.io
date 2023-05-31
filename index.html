@@ -18,6 +18,7 @@
 						<a href="https://github.com/k0sproject/k0smotron" target="_blank"><i class="fab fa-github"></i></a>
 						<a href="https://forums.k8slens.dev/" target="_blank"><i class="fas fa-comments"></i></a>
 						<a href="https://twitter.com/k0sproject" target="_blank"><i class="fab fa-twitter"></i></a>
+						<a href="https://docs.k0smotron.io" target="_blank"><i class="fas fa-book"></i></a>
 					</div>
 				</div>
 			</div>
@@ -121,28 +122,33 @@
 			<div class="row">
 				<div class="col-12 left">
 					<p>Getting started with k0smotron is easy. Simply install the controller into existing cluster:</p>
-					<pre><code class="language-bash">kubectl apply -f https://raw.githubusercontent.com/k0sproject/k0smotron/main/install.yaml</code></pre>
+					<pre style="background-color: rgba(1, 8, 9, .55); padding: 10px;">
+<!-- Note to next reader, has to be untabbed otherwise HTML will render the tabs too -->
+<code class="language-bash">kubectl apply -f https://raw.githubusercontent.com/k0sproject/k0smotron/main/install.yaml</code>
+					</pre>
 					<p>Then create a k0s control plane:</p>
-					<pre><code class="language-bash">
-kubectl apply -f - &lt;&lt;EOF
-apiVersion: k0smotron.io/v1beta1
-kind: K0smotronCluster
-metadata:
-name: my-k0smotron
-spec: null
-EOF
-					</code></pre>
+					<pre style="background-color: rgba(1, 8, 9, .55); padding: 10px;">
+<code class="language-bash">
+kubectl apply -f - &lt;&lt;EOF 
+apiVersion: k0smotron.io/v1beta1 
+kind: K0smotronCluster 
+metadata: 
+name: my-k0smotron 
+spec: null 
+EOF	</code></pre>
 					<p>And that's it. You now have a k0s control plane running in your cluster. For further details how to work with the created cluster control plane check out the <a href="https://docs.k0smotron.io" target="_blank">documentation</a>.</p>
 				</div>
 			</div>
-			<div class="row faq-row">
-				<div class="col-12">
+			<div class="row">
+				<div class="col-12 left">
 					<h2>FAQ</h2>
 				</div>
+			</div>
+			<div class="row faq-row">
 				<div class="col-6">
 					<div class="faq-item">
 						<div class="faq-item-q">
-							What is the relation of k0smotron with <a href="https://cluster-api.sigs.k8s.io/" target="_blank">Cluster API</a>
+							What is the relation of k0smotron with Cluster API
 						</div>
 						<div class="faq-item-a">
 							While k0smotron currently is a "standalone" controller for k0s control planes we're looking to expand this as a full Cluster API provider. Or rather set of providers as were looking to implement both ControlPlane and Bootstrap providers.
@@ -190,6 +196,7 @@ EOF
 						<a href="https://github.com/k0sproject/k0smotron" target="_blank"><i class="fab fa-github"></i></a>
 						<a href="https://forums.k8slens.dev/" target="_blank"><i class="fas fa-comments"></i></a>
 						<a href="https://twitter.com/k0sproject" target="_blank"><i class="fab fa-twitter"></i></a>
+						<a href="https://docs.k0smotron.io/" target="_blank"><i class="fas fa-solid fa-book"></i></a>
 					</div>
 					<p>Copyright © 2023 Mirantis, Inc. - All rights reserved.</p>
 				</div>
