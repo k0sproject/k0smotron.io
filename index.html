@@ -133,17 +133,17 @@
 					<p>Getting started with k0smotron is easy. Simply install the controller into existing cluster:</p>
 					<pre style="background-color: rgba(1, 8, 9, .55); padding: 10px;">
 <!-- Note to next reader, has to be untabbed otherwise HTML will render the tabs too -->
-<code class="language-bash">kubectl apply -f https://raw.githubusercontent.com/k0sproject/k0smotron/main/install.yaml</code>
+<code class="language-bash">kubectl apply -f https://docs.k0smotron.io/stable/install.yaml</code>
 					</pre>
 					<p>Then create a k0s control plane:</p>
 					<pre style="background-color: rgba(1, 8, 9, .55); padding: 10px;">
 <code class="language-bash">
 kubectl apply -f - &lt;&lt;EOF 
 apiVersion: k0smotron.io/v1beta1 
-kind: K0smotronCluster 
+kind: Cluster 
 metadata: 
 name: my-k0smotron 
-spec: null 
+spec: {} 
 EOF	</code></pre>
 					<p>And that's it. You now have a k0s control plane running in your cluster. For further details how to work with the created cluster control plane check out the <a href="https://docs.k0smotron.io" target="_blank">documentation</a>.</p>
 				</div>
