@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>K0smotron</title>
+	<title>k0smotron</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="https://kit.fontawesome.com/80dc2f45ab.js" crossorigin="anonymous"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,13 +41,13 @@
 					<img class="image-circle" src="images/wave-circle@2x.png" alt="wave-circle">
 					<div class="text" style="top:-25%"><p>Team Lens proudly presents</p></div>
 					<img class="image-logo" src="images/k0smotron-logo-inverted@2x.png" alt="k0smotron-logo-inverted">
-					<div class="text"><p>From pets to cattle: Streamline your Kubernetes control plane management with k0smotron</p></div>	
+					<div class="text"><p>An open source control plane manager for unified cluster management</p></div>	
 				</div>
 			</div>
 			<div class="row hero-section-text-row">
 				<div class="col-8 center">
 					<p></p>
-					<p>Experience unparalleled isolation, scalability, and resource efficiency for your Kubernetes control planes with k0smotron - the ultimate Kubernetes management solution. It’s designed for <a href="https://k0sproject.io" target="_blank">k0s</a></p>
+					<p>k0smotron allows you to unify your Kubernetes cluster management for an efficient use of resources. It’s designed for <a href="https://k0sproject.io" target="_blank">k0s</a></p>
 				</div>
 			</div>
 		</div>
@@ -62,20 +62,20 @@
 			<div class="row row-3-items">
 				<div class="col-4 left">	
 					<div class="wrapper">
-						<h3>Kubernetes-in-Kubernetes</h3>
-						<p>k0smotron allows you to easily create and manage the clusters in an existing Kubernetes cluster. This allows unparalled scalability and flexibility when you have to work with many clusters. It allows a truly homogenous setup for all control planes and thus eases the maintenance burden.</p>
+						<h3>Control Plane-as-a-Service</h3>
+						<p>k0smotron streamlines k0s control plane creation and management within your management cluster, reducing traditional operational overhead. k0smotron encapsulates the control plane service as a pods (and other Kubernetes constructs) and provides an intuitive approach to cluster lifecycle management through ClusterAPI integration.</p>
 					</div>
 				</div>
 				<div class="col-4 left">	
 					<div class="wrapper">
-						<h3>True control and worker plane separation</h3>
-						<p>Using k0smotron the clusters controlplane and workerplane are truly separated. The controlplane, running on an existing cluster has no direct networking connection to the workerplane. This is a similar pattern to how all the major cloud providers separate the control and worker planes on the managed clusters.</p>
+						<h3>Enhanced High Availability</h3>
+						<p>k0smotron allows you to leverage the power of SQL databases as a data store for your control planes through Kine. This flexibility means you can choose from a variety of data storage operators like Postgres, MySQL, or your cloud provider's managed databases. This offers a robust, high-availability solution, eliminating the dependency on Etcd.</p>
 					</div>
 				</div>
 				<div class="col-4 left">
 					<div class="wrapper">	
-						<h3>Bring your own workers</h3>
-						<p>With k0smotron you can connect worker nodes from ANY infrastructure to your cluster control plane. This allows you to manage all control planes in a shared infrastructure, and in a homogenous way, but connect each cluster’s workers from separate remote infrastructures.</p>
+						<h3>Bring Your Own Worker Nodes</h3>
+						<p>k0smotron prioritizes flexibility in the integration of worker nodes and allows easy connection or creation of nodes. This ensures node isolation and flexible scaling, minimizing interference with the control plane. k0smotron operates with or without the ClusterAPI, offering you the freedom to select your preferred operational mode.</p>
 					</div>
 				</div>
 			</div>
@@ -84,13 +84,15 @@
 	<section class="section-how">
 		<div class="container">
 			<div class="row">
-				<div class="col-6">
+				<div>
 					<h2>How does it work</h2>
-					<p>You install k0smotron operator into an existing Kubernetes cluster. k0smotron operator will create and manage k0s control planes in that cluster. It leverages the natural pattern of working with custom resources to manage the lifecycle of the k0s control planes. k0smotron will automatically create all the needed Kubernetes lower level constructs, such as pods, configmaps etc., to </p>
-					<p>k0smotron is an Kubernetes operator designed to manage the lifecycle of k0s control planes in a Kubernetes (any distro) cluster. By running the control plane on a k8s cluster we can enjoy and leverage the high availability and auto-healing functionalities of the underlying cluster, a.k.a Mothership.</p>
+					<p>The k0smotron controller manager is a service that will be installed into an existing Kubernetes cluster. k0smotron will create and manage k0s control planes in the management cluster like workloads. It leverages the natural pattern of working with custom resources to manage the lifecycle of the k0s control planes. k0smotron will automatically create all the needed Kubernetes lower level resources, such as pods, configmaps, etc.</p>
+					<p>k0smotron is a service designed to manage the lifecycle of k0s control planes in a Kubernetes (any distro) cluster. By running the control plane on a k8s cluster we can enjoy and leverage the high availability and auto-healing functionalities of the management cluster.</p>
 				</div>
-				<div class="col-6">
-					<img src="images/k0smotron-diagram-v2.png" alt="how-does-it-work-diagram" />
+			</div>
+			<div class="row" style="padding-top: 20px;">
+				<div class="center">
+					<img src="images/k0smotron-diagram-v2.png" alt="how-does-it-work-diagram" width="80%" height="80%"/>
 				</div>
 			</div>
 		</div>
@@ -105,21 +107,22 @@
 			<div class="row row-3-items">
 				<div class="col-4 left">	
 					<div class="wrapper">
-						<h3>CI/CD</h3>
-						<p>Often when running integration and end-to-end testing for your software running in Kubernetes you need somewhat temporary clusters in CI. Why not leverage the true flexibility and create those clusters on-demand using k0smotron. Creating a controlplane is as easy as creating a custom resource, so is the deletion of it. No more long living snowflake clusters for CI purposes.</p>
+						<h3>Development and CI/CD</h3>
+						<p>In the process of continuous integration and end-to-end testing, a temporary Kubernetes Cluster is needed. With k0smotron, these clusters can be created on demand in a declarative way and thus integrated into the existing CI process with ease. This avoids cluster sprawl and long-living snowflake clusters.</p>
 					</div>
 				</div>
 				<div class="col-4 left">	
 					<div class="wrapper">
-						<h3>Edge</h3>
-						<p>Running Kubernetes on the network edge usually means running in low resource infrastructure. What this often means is that setting up the controlplane is either a challenge or a mission impossible. Running the controlplane on an existing cluster, on a separate dedicated infrastructure, removes that challenge and lets you focus on the real edge. </p>
-						<p>Running on the edge often also means a large number of clusters to manage. Do you really want to dedicate nodes for each cluster controlplane and manage all the infrastructure for those?</p>
+						<h3>Edge Container Management</h3>
+						<p>Kubernetes at the edge typically comes with the requirement of a low resource footprint. As a result, clusters with distributed roles are more challenging and a lot of single-node clusters are created. Managing the large number of clusters confronts us with almost impossible tasks.</p>
+						<p>Offloading the control plane means that the persistence layer of the cluster can run on dedicated hardware and workloads can be managed at the edge on devices dedicated to their purposes. With k0smotron worker nodes get ephemeral.</p>
 					</div>
 				</div>
 				<div class="col-4 left">
 					<div class="wrapper">	
-						<h3>Multi-cloud</h3>
-						<p>With k0smotron you can run your control plane management cluster (a.k.a Mothership) in one cloud provider and the workloads in various other cloud providers. This allows you to build and maintain a very streamlined approach to multi cloud.</p>
+						<h3>Multi-cloud Cluster LCM</h3>
+						<p>A multi-cloud strategy is essential these days. But managed Kubernetes offerings are often different in versioning or even the built-in tooling.</p>
+						<p>With k0smotron, you can run the control plane management cluster in a public or private cloud provider of your choice and the worker nodes in different clouds. With this you have an approach to unified cluster management, providing one flavor on all clouds and saving the costs for the highly available Control Plane in the cloud.</p>
 					</div>
 				</div>
 			</div>
@@ -130,7 +133,7 @@
 			</div>
 			<div class="row">
 				<div class="col-12 left">
-					<p>Getting started with k0smotron is easy. Simply install the controller into existing cluster:</p>
+					<p>Getting started with k0smotron is easy. Simply install the controller into an existing cluster:</p>
 					<pre style="background-color: rgba(1, 8, 9, .55); padding: 10px;">
 <!-- Note to next reader, has to be untabbed otherwise HTML will render the tabs too -->
 <code class="language-bash">kubectl apply -f https://docs.k0smotron.io/stable/install.yaml</code>
@@ -144,8 +147,9 @@ kind: Cluster
 metadata: 
 name: my-k0smotron 
 spec: {} 
-EOF	</code></pre>
-					<p>And that's it. You now have a k0s control plane running in your cluster. For further details how to work with the created cluster control plane check out the <a href="https://docs.k0smotron.io" target="_blank">documentation</a>.</p>
+EOF	
+</code></pre>
+					<p>That's it. You now have a k0s control plane running in your cluster. For further details how to work with the new cluster control plane check out the <a href="https://docs.k0smotron.io" target="_blank">documentation</a>.</p>
 				</div>
 			</div>
 			<div class="row">
@@ -157,39 +161,31 @@ EOF	</code></pre>
 				<div class="col-6">
 					<div class="faq-item">
 						<div class="faq-item-q">
-							What is the relation of k0smotron with Cluster API
+							What is the relationship between k0smotron and Cluster API?
 						</div>
 						<div class="faq-item-a">
-							While k0smotron currently is a "standalone" controller for k0s control planes we're looking to expand this as a full Cluster API provider. Or rather set of providers as were looking to implement both ControlPlane and Bootstrap providers.
+							k0smotron already provides integration into Cluster API, can create Control Planes and act as a CAPI Bootstrap Provider for Worker Nodes. We are looking to expand k0smotron as a full Cluster API provider.
 						</div>
 					</div>
 					<div class="faq-item">
 						<div class="faq-item-q">
-							How is k0smotron different from typical multi-cluster management solutions such as Tanzu, Rancher etc.?
+							How is k0smotron different from multi-cluster management solutions such as Tanzu, Rancher, etc.?
 						</div>
 						<div class="faq-item-a">
-							Most of the existing multi-cluster management solutions provision specific infrastructure for the control planes, in most cases VMs. In all of the cases we've looked at the worker plane infrastructure is also provisioned in the same infrastructure with the control plane and thus not allowing you to fully utilize the capabilities of the management cluster.
+							Most of the existing multi-cluster management solutions provision infrastructure for the control planes, in most cases VMs. In all of the cases we've looked at the worker plane infrastructure is also provisioned in the same infrastructure with the control plane and thus not allowing you to fully utilize the capabilities of the management cluster.
 						</div>
 					</div>
 				</div>
 				<div class="col-6">
 					<div class="faq-item">
 						<div class="faq-item-q">
-							What do we mean with pet vs. cattle?
+							How is this different to managed Kubernetes providers?
 						</div>
 						<div class="faq-item-a">
-							As the controlplanes for clusters are pretty static, it means they are usually managed as "pets". Using an operator like k0smotron to manage k0s control planes within an existing Kubernetes cluster is a "cattle" approach that allows for a more scalable and flexible management of clusters. This approach makes it easier to maintain a consistent and homogeneous setup across all clusters, while also taking advantage of the high availability and auto-healing features of Kubernetes.
-						</div>
-					</div>
-					<div class="faq-item">
-						<div class="faq-item-q">
-							How is this different for managed Kubernetes providers?
-						</div>
-						<div class="faq-item-a">
-							Control and Flexibility: k0smotron gives you full control over your cluster configurations within your existing Kubernetes cluster, offering unparalleled flexibility.<br/>
+							Control and Flexibility: k0smotron gives you full control over your cluster configurations within your Management cluster, offering unparalleled flexibility.<br/>
 							Bring Your Own Workers: Unlike managed Kubernetes providers, k0smotron allows you to connect worker nodes from any infrastructure, providing greater freedom and compatibility.<br/>
 							Cost Efficiency: By leveraging your existing Kubernetes cluster, k0smotron helps reduce costs associated with managing separate clusters or paying for additional resources.<br/>
-							Homogeneous Setup: k0smotron ensures a consistent configuration across clusters, simplifying maintenance and management tasks.<br/>
+							Homogeneous Setup: k0smotron ensures a consistent configuration across clouds, simplifying maintenance and management tasks.<br/>
 						</div>
 					</div>
 				</div>
