@@ -81,6 +81,28 @@
 			</div>
 		</div>
 	</section>
+	<section class="section-features">
+		<div class="container">
+			<div class="row">
+				<div class="col-6">
+					<h3>Cluster API</h3>
+					<p>k0smotron is NOT limited to only to manage k0s control planes. It has now evolved into full <a href="">Cluster API</a> provider for k0s.</p>
+					<p>k0smotron operates as:</p>
+					<p>
+						<ul>
+							<li><p>ControlPlane provider</p></li>
+							<li><p>Bootstrap provider</p></li>
+							<li><p>Infrastructure provider (with k0smotron Anywhere)</p></li>
+						</ul>
+					</p>
+				</div>
+				<div class="col-6">
+					<h3>k0smotron Anywhere</h3>
+					<p>k0smotron Anywhere functions as a Cluster API compliant infrastructure provider that enables cluster provisioning on remote machines using SSH connections. This opens up new possibilities for managing remote machines seamlessly in your Kubernetes clusters. Perfect for diverse infrastructure setups, bare metal and for environment which has no existing Cluster API support.</p>
+				</div>
+			</div>
+		</div>
+	</section>
 	<section class="section-how">
 		<div class="container">
 			<div class="row">
@@ -160,7 +182,7 @@ EOF	</code></pre>
 							What is the relation of k0smotron with Cluster API
 						</div>
 						<div class="faq-item-a">
-							While k0smotron currently is a "standalone" controller for k0s control planes we're looking to expand this as a full Cluster API provider. Or rather set of providers as were looking to implement both ControlPlane and Bootstrap providers.
+							k0smotron is a Cluster API provider for k0s. It is a fully compliant Cluster API provider and can be used with any Cluster API compatible tooling. k0smotron is also a Cluster API infrastructure provider, allowing you to provision clusters on remote machines using SSH connections.
 						</div>
 					</div>
 					<div class="faq-item">
