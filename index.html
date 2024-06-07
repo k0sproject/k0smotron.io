@@ -25,7 +25,7 @@
 				<div class="col-12 header-col">
 					<div class="social-icons">
 						<a href="https://github.com/k0sproject/k0smotron" target="_blank"><i class="fab fa-github"></i></a>
-						<a href="https://forums.k8slens.dev/" target="_blank"><i class="fas fa-comments"></i></a>
+						<a href="https://forums.k8slens.dev/" target="_blank"><i class="fab fa-slack"></i></a>
 						<a href="https://twitter.com/k0sproject" target="_blank"><i class="fab fa-twitter"></i></a>
 						<a href="https://docs.k0smotron.io" target="_blank"><i class="fas fa-book"></i></a>
 					</div>
@@ -40,8 +40,8 @@
 					<img class="image-dashed rotating" src="images/dashed-ring@2x.png" alt="dashed-ring">
 					<img class="image-circle" src="images/wave-circle@2x.png" alt="wave-circle">
 					<div class="text" style="top:-25%"><p>Team Lens proudly presents</p></div>
-					<img class="image-logo" src="images/k0smotron-logo-inverted@2x.png" alt="k0smotron-logo-inverted">
-					<div class="text"><p>From pets to cattle: Streamline your Kubernetes control plane management with k0smotron</p></div>	
+					<img class="image-logo" src="images/k0smotron-logo.svg" alt="k0smotron-logo-inverted">
+					<div class="text text-bottom"><p>From pets to cattle: declaratively manage hosted k0s control planes, workers, clusters, and underlying infrastructure through the Kubernetes API.</p></div>	
 				</div>
 			</div>
 			<div class="row hero-section-text-row">
@@ -63,7 +63,7 @@
 				<div class="col-4 left">	
 					<div class="wrapper">
 						<h3>Kubernetes-in-Kubernetes</h3>
-						<p>k0smotron allows you to easily create and manage the clusters in an existing Kubernetes cluster. This allows unparalled scalability and flexibility when you have to work with many clusters. It allows a truly homogenous setup for all control planes and thus eases the maintenance burden.</p>
+						<p>k0smotron lets you easily create and manage hosted control planes in an existing Kubernetes cluster. This permits unparalleled scalability and flexibility when working with many clusters, easing the burden of multi-cluster operations and maintenance.</p>
 					</div>
 				</div>
 				<div class="col-4 left">	
@@ -86,19 +86,19 @@
 			<div class="row">
 				<div class="col-6">
 					<h3>Cluster API</h3>
-					<p>k0smotron is NOT limited to only to manage k0s control planes. It has now evolved into full <a href="">Cluster API</a> provider for k0s.</p>
+					<p>k0smotron is NOT limited to only managing hosted k0s control planes. It has now evolved into a full Cluster API provider for k0s.</p>
 					<p>k0smotron operates as:</p>
 					<p>
 						<ul>
 							<li><p>ControlPlane provider</p></li>
 							<li><p>Bootstrap provider</p></li>
-							<li><p>Infrastructure provider (with k0smotron Anywhere)</p></li>
+							<li><p>Infrastructure provider (with k0smotron RemoteMachine)</p></li>
 						</ul>
 					</p>
 				</div>
 				<div class="col-6">
-					<h3>k0smotron Anywhere</h3>
-					<p>k0smotron Anywhere functions as a Cluster API compliant infrastructure provider that enables cluster provisioning on remote machines using SSH connections. This opens up new possibilities for managing remote machines seamlessly in your Kubernetes clusters. Perfect for diverse infrastructure setups, bare metal and for environment which has no existing Cluster API support.</p>
+					<h3>k0smotron RemoteMachine</h3>
+					<p>k0smotron RemoteMachine functions as a Cluster API compliant infrastructure provider enabling cluster provisioning on remote machines using SSH connections. This opens up new possibilities for managing remote machines seamlessly in your Kubernetes clusters. Perfect for diverse infrastructure setups, bare metal and for environments which have no existing Cluster API support.</p>
 				</div>
 			</div>
 		</div>
@@ -141,7 +141,7 @@
 				<div class="col-4 left">
 					<div class="wrapper">	
 						<h3>Multi-cloud</h3>
-						<p>With k0smotron you can run your control plane management cluster (a.k.a Mothership) in one cloud provider and the workloads in various other cloud providers. This allows you to build and maintain a very streamlined approach to multi cloud.</p>
+						<p>With k0smotron, you can distribute hosted or conventional Kubernetes control planes and workers across one or multiple infrastructures. Aggregate control planes in a ‘mothership’ cluster on public cloud, and put workers (and workloads) on another public cloud, on-premises cloud, or on bare metal machines from datacenter to edge. Explore novel cluster configurations to enhance reliability, security, performance, and to control costs.</p>
 					</div>
 				</div>
 			</div>
@@ -193,8 +193,6 @@ EOF	</code></pre>
 							Most of the existing multi-cluster management solutions provision specific infrastructure for the control planes, in most cases VMs. In all of the cases we've looked at the worker plane infrastructure is also provisioned in the same infrastructure with the control plane and thus not allowing you to fully utilize the capabilities of the management cluster.
 						</div>
 					</div>
-				</div>
-				<div class="col-6">
 					<div class="faq-item">
 						<div class="faq-item-q">
 							What do we mean with pet vs. cattle?
@@ -203,15 +201,21 @@ EOF	</code></pre>
 							As the controlplanes for clusters are pretty static, it means they are usually managed as "pets". Using an operator like k0smotron to manage k0s control planes within an existing Kubernetes cluster is a "cattle" approach that allows for a more scalable and flexible management of clusters. This approach makes it easier to maintain a consistent and homogeneous setup across all clusters, while also taking advantage of the high availability and auto-healing features of Kubernetes.
 						</div>
 					</div>
+				</div>
+				<div class="col-6">
 					<div class="faq-item">
 						<div class="faq-item-q">
 							How is this different for managed Kubernetes providers?
 						</div>
 						<div class="faq-item-a">
-							Control and Flexibility: k0smotron gives you full control over your cluster configurations within your existing Kubernetes cluster, offering unparalleled flexibility.<br/>
-							Bring Your Own Workers: Unlike managed Kubernetes providers, k0smotron allows you to connect worker nodes from any infrastructure, providing greater freedom and compatibility.<br/>
-							Cost Efficiency: By leveraging your existing Kubernetes cluster, k0smotron helps reduce costs associated with managing separate clusters or paying for additional resources.<br/>
-							Homogeneous Setup: k0smotron ensures a consistent configuration across clusters, simplifying maintenance and management tasks.<br/>
+							<div>
+								<ul>
+									<li>Control and Flexibility: <br/>k0smotron gives you full control over your cluster configurations within your existing Kubernetes cluster, offering unparalleled flexibility.</li>
+									<li>Bring Your Own Workers: <br/>Unlike managed Kubernetes providers, k0smotron allows you to connect worker nodes from any infrastructure, providing greater freedom and compatibility.</li>
+									<li>Cost Efficiency: <br/>By leveraging your existing Kubernetes cluster, k0smotron helps reduce costs associated with managing separate clusters or paying for additional resources.</li>
+									<li>Homogeneous Setup: <br/>k0smotron ensures a consistent configuration across clusters, simplifying maintenance and management tasks.</li>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -225,11 +229,11 @@ EOF	</code></pre>
 					<h2>Join the <br>k0smotron community</h2>
 					<div class="social-icons">
 						<a href="https://github.com/k0sproject/k0smotron" target="_blank"><i class="fab fa-github"></i></a>
-						<a href="https://forums.k8slens.dev/" target="_blank"><i class="fas fa-comments"></i></a>
+						<a href="https://forums.k8slens.dev/" target="_blank"><i class="fab fa-slack"></i></a>
 						<a href="https://twitter.com/k0sproject" target="_blank"><i class="fab fa-twitter"></i></a>
 						<a href="https://docs.k0smotron.io/" target="_blank"><i class="fas fa-solid fa-book"></i></a>
 					</div>
-					<p>Copyright © 2023 Mirantis, Inc. - All rights reserved.</p>
+					<p>Copyright © 2024 Mirantis, Inc. - All rights reserved.</p>
 				</div>
 			</div>
 		</div>

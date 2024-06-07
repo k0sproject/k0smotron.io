@@ -308,6 +308,9 @@ body{
 .hero-section p{
   font-size: 18px;
 }
+.hero-section .text-bottom p{
+  font-size: 14px;
+}
 .hero-section .image-col .text p{
   color: #fff;
   max-width: 60%;
@@ -361,7 +364,8 @@ header{
   text-decoration: none;
   width: 30px;
   height: 30px;
-  background-color: #A5F8FF; 
+  background-color: #32DCE0;
+  ; 
   border-radius: 100%;
 }
 .social-icons a+a{
@@ -379,7 +383,7 @@ header{
   .row-3-items .col-4{
     box-sizing: border-box;
     padding: 40px;
-    border-top: 1px solid #B7F6FD;
+    border-top: 1px solid #32DCE0;
   }
 }
 
@@ -394,18 +398,18 @@ header{
   }
   .row-3-items .col-4:nth-child(1),
   .row-3-items .col-4:nth-child(3){
-    border-top: 1px solid #B7F6FD;
+    border-top: 1px solid #32DCE0;
   }
   .row-3-items .col-4:nth-child(2){
-    border-left: 1px solid #B7F6FD;
-    border-right: 1px solid #B7F6FD;
-    border-bottom: 1px solid #B7F6FD;
+    border-left: 1px solid #32DCE0;
+    border-right: 1px solid #32DCE0;
+    border-bottom: 1px solid #32DCE0;
   }
 }
 
 @media(max-width: 719px){
   .faq-row .col-6+.col-6{
-    border-top: 1px solid #B7F6FD;
+    border-top: 1px solid #32DCE0;
   }
 }
 .faq-row{
@@ -414,7 +418,7 @@ header{
   background-color: rgba(1, 8, 9, .55);
 }
 .faq-item{
-  border-bottom: 1px solid #B7F6FD;
+  border-bottom: 1px solid #32DCE0;
   padding-top: 24px;
 }
 .faq-item:last-child{
@@ -437,6 +441,14 @@ header{
   content: 'A:';
   display: block;
   margin-right: 24px;
+}
+.faq-item-a ul{
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 21px;
+}
+.faq-item-a ul li+li{
+  margin-top: 24px;
 }
 
 .section-features{
