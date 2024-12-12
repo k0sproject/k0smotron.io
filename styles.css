@@ -1620,6 +1620,10 @@ Colors:
   .overview p{
 	color: white;
   }
+
+  .overview h2{
+	margin-bottom: 24px;
+  }
   
   /**************************/
   /*     12. Statistics     */
