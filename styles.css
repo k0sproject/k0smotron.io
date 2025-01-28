@@ -1781,6 +1781,10 @@ Colors:
 	  padding-bottom: 120px;
 	  background: black;
 	  text-align: center;
+	  border-bottom-style: solid;
+	  border-bottom-width: 10px;
+	  border-image: linear-gradient(90deg, #1DA7FD, #08F5DA);
+      border-image-slice: 1;
   }
   
   .copyright .p-small {
