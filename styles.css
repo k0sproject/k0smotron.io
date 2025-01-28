@@ -899,14 +899,17 @@ Colors:
   /*********************/
   .header {
 	position: relative;
-	background: linear-gradient(90deg, black 50%, var(--primary-color) 50%);
+	background-image: linear-gradient(to right, black, black), url('images/aqua-blue-gradient-bg.png');
+	background-position-x: 0%, 50%;
+	background-size: 50% 100%, 100% 100%;
+	background-repeat: no-repeat, no-repeat;
 	overflow: hidden;
 	@media(max-width: 992px) {
 		background: none;
 		.header-content {
 			
 			padding-bottom: 2rem !important;
-			background-color: var(--primary-color);
+			background-color: black;
 		}
 		h1 {
 			font-size: 40px !important;
@@ -917,7 +920,7 @@ Colors:
 		}
 		.blue-col {
 			padding-top: 3rem;
-			background-color: var(--primary-color);
+			background: url('images/aqua-blue-gradient-bg.png');
 		}
 	}
   }
@@ -1565,7 +1568,7 @@ Colors:
   .basic-4 {
 	  padding-top: 40px;
 	  padding-bottom: 40px;
-	  background: var(--primary-color);
+	  background: linear-gradient(90deg, #1DA7FD 0%, #08F5DA 100%);
 	  h2, img {
 		display: inline;
 	  }
