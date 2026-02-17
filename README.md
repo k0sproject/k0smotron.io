@@ -1,4 +1,6 @@
 # k0smotron
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fk0sproject%2Fk0smotron.io.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fk0sproject%2Fk0smotron.io?ref=badge_shield)
+
 
 Experience unparalleled isolation, scalability, and resource efficiency for your Kubernetes control planes with k0smotron - the ultimate Kubernetes management solution. It's designed for k0s. 
 
@@ -46,3 +48,7 @@ Running on the edge often also means large number of clusters to manage. Do you 
 - Public cloud managed kubernetes
 - Scaleway Kosmos
 
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fk0sproject%2Fk0smotron.io.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fk0sproject%2Fk0smotron.io?ref=badge_large)
